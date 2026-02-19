@@ -163,7 +163,7 @@ jg (jump if greater) considera números com sinal (positivos/negativos). ja (jum
 
  • Desafios são opcionais, mas recomendado; se não conseguir resolver, não se preocupe, eles abordam conceitos mais avançados que geralmente não chegamos.
 
-- [Veja aqui para extras](https://github.com/willc141/assembly-basics/blob/main/Conceitos%2FExtras%2Fextras_001.md)
+- Veja aqui para extras: https://github.com/willc141/assembly-basics/blob/main/Conceitos%2FExtras%2Fextras_001.md
 
 1. Modifique o programa para testar se o número é maior que 10. Se for, imprima "Maior que 10", senão imprima "Menor ou igual a 10". Use cmp e jg/jle.
 2. Desafio 1: Crie um loop que imprima os números de 1 a 5, cada um em uma linha. Dica: use um registrador como contador, um rótulo para o início do loop, e incremente o contador até um limite. Use cmp e jl para continuar. (imprima apenas o caractere correspondente ao dígito, somando '0' ao número. Exemplo: para imprimir '1', faça add al, '0' e depois mov [buffer], al e chame write com um buffer de 1 byte.)

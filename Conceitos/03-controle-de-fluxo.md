@@ -38,9 +38,13 @@ return 0;
 Em assembly, precisamos:
 
 · Armazenar o número em .data.
+
 · Calcular num % 2. Como é divisão por 2, basta testar o bit menos significativo (LSB). Se for 0, é par; se for 1, é ímpar. Isso pode ser feito com test ou and.
+
 · Usar um salto condicional para escolher a mensagem correta.
+
 · Chamar write com a mensagem apropriada.
+
 · Sair.
 
 Vamos usar a instrução test para verificar o bit 0. test rax, 1 faz um AND bit a bit entre rax e 1, setando as flags ZF (zero) se o resultado for zero (ou seja, se o bit 0 for 0). Portanto, se o número for par, test resulta em zero (ZF=1); se for ímpar, resulta em não-zero (ZF=0). Então podemos usar jz (jump if zero) para pular se for par, ou jnz (jump if not zero) para pular se for ímpar.
@@ -96,7 +100,9 @@ _start:
 1. A instrução test faz um AND bit a bit entre os dois operandos e descarta o resultado, apenas setando as flags de acordo. É equivalente a and rax, 1 mas sem modificar rax. As flags mais importantes aqui:
 
 · ZF (Zero Flag) = 1 se o resultado for zero.
+
 · SF (Sign Flag) = 1 se o resultado for negativo (mas como é AND, o resultado nunca é negativo porque 1 é positivo, então SF=0).
+
 · Outras flags (CF, OF) são zeradas.
 
 Se o bit 0 de rax for 0, o resultado de rax AND 1 é 0, então ZF=1. Se for 1, o resultado é 1, ZF=0.

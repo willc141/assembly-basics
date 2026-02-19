@@ -5,7 +5,9 @@ Até agora, nosso programa executava instruções sequencialmente, uma após a o
 Conceitos básicos
 
 · EFLAGS / RFLAGS: É um registrador especial (de 64 bits, mas apenas alguns bits são usados) que armazena flags (indicadores) resultantes de operações aritméticas e lógicas. Por exemplo, após uma instrução add ou sub, flags como ZF (zero flag), SF (sign flag), CF (carry flag), OF (overflow flag) são atualizadas automaticamente.
+
 · CMP (compare): Instrução que subtrai o segundo operando do primeiro, mas descarta o resultado, apenas atualizando as flags. É como sub sem armazenar o resultado. Serve para comparar dois valores.
+
 · Saltos condicionais (Jcc): Instruções que desviam o fluxo para um rótulo se determinada condição (baseada nas flags) for verdadeira. 
 
 Exemplos: 
@@ -15,7 +17,8 @@ jg (pule se maior)
 jl (pule se menor)
 jge (pule se maior ou igual)
 jle (pule se menor ou igual)
-e etc. Existem também saltos incondicionais: jmp (sempre pula).
+e etc.
+Existem também saltos incondicionais: jmp (sempre pula).
 
 ### Decidir se um número é par ou ímpar
 
